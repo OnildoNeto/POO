@@ -1,0 +1,57 @@
+abstract class  Empregado {
+    private String nome , sobrenome, cpf;
+    public  Empregado(String nome, String sobrenome, String cpf){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.cpf = cpf;
+    }
+    public abstract double Vencimento();
+}
+
+class Assalariado extends Empregado {
+    private double salario;
+    public Assalariado(double salario, String nome, String sobrenome, String cpf){
+        super(nome, sobrenome, cpf);
+        this.salario = salario;
+    }
+    public double Vencimento(){
+        return salario;
+    }
+   
+}
+
+class Comissionado extends Empregado{
+    private double totalVenda, taxaComissao;
+    public Comissionado(double totalVenda, double taxaComissao, String nome, String sobrenome, String cpf ){
+        super(nome, sobrenome, cpf);
+        this.totalVenda = totalVenda;
+        this.taxaComissao = taxaComissao;
+    }
+    public double Vencimento(){
+        return (totalVenda * taxaComissao);
+    }
+}
+class Horista extends Empregado {
+    private double precoHora, horasTrabalhadas;
+    public Horista(double precoHora, double horasTrabalhadas, String nome, String sobrenome, String cpf){
+        super(nome, sobrenome, cpf);
+        this.precoHora = precoHora;
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+    public double Vencimento(){
+        return (precoHora * horasTrabalhadas);
+    }
+}
+
+
+
+public class Principal {
+    public static void main(String []args){
+        Assalariado A = new Assalariado(200.0, "jose", "Calixto", "707778782");
+        System.out.println("total Assalariado: " + A.Vencimento());
+        Comissionado C = new Comissionado(200.0, 50.0,  "Ádrya", "Carvalho", "7867856867");
+        System.out.println("Total Comissionado: " + C.Vencimento());
+        Horista H = new Horista(40.0, 10.5, "Onildo", "Neto", "86876489");
+        System.out.println("Total Horista: " + H.Vencimento());
+    }
+}
