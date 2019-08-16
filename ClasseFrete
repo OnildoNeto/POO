@@ -66,7 +66,8 @@ class CadastroFrete  {
     this.Fretes = new frete[qtd]; 
   }
   public boolean addFrete( frete f){
-    if (Fretes[qtd] <=  10) return false;
+    if (qtd >= 10) return false;
+    
       this.Fretes[qtd++] = f;
       return true;
     
@@ -74,18 +75,29 @@ class CadastroFrete  {
 
   public double calcularFrete(){
     double total = 0;
-    for (int i = 0; i < fretes.length; ++i){
-     if (fretes[i] != null) {
-       total = total + fretes[i].calcularFrete();
+    for (int i = 0; i < Fretes.length; ++i){
+     if (Fretes[i] != null) {
+       total = total + Fretes[i].calcularFrete();
      }
     }
 
     return total;
 
 }
+}
 
 public class Main{
   public static void main(String []args){
-    
+    CadastroFrete c = new CadastroFrete(10);
+    fretePadrao f = new fretePadrao(50.0 , 10.0);
+    FreteExpresso E = new FreteExpresso(50.0 , 10.0, 2);
+    FreteSuperExpresso SE = new FreteSuperExpresso(50.0 , 10.0, 2, 100 );
+    System.out.println(f.calcularFrete());
+    System.out.println(E.calcularFrete());
+    System.out.println(SE.calcularFrete());
+    c.addFrete(f);
+    c.addFrete(E);
+    c.addFrete(f);
+    System.out.println(c.calcularFrete());
   }
 }
