@@ -1,0 +1,44 @@
+abstract class forma {
+
+  public abstract float calcularArea();
+
+   public abstract float calcularPerimetro();
+}
+
+class Retangulo extends forma{
+  private float base, altura;
+  public Retangulo(float base,float altura){
+    this.base = base;
+    this.altura = altura;
+  }
+  public float calcularPerimetro(){
+    return (2 * base) + (2 * altura);
+  }
+
+  public float calcularArea(){
+    return (base * altura);
+  }
+}
+
+class Circulo extends forma{
+  private float raio;
+  private final float pi;
+  public Circulo(float raio, float pi) {
+    this.raio = raio;
+    this.pi = pi;
+  }
+  public float calcularPerimetro(){
+    return (2 * pi * raio);
+  }
+
+  public float calcularArea(){
+    return (pi * raio * raio);
+  }
+
+}
+public class Main{
+  public static void main(String args[]){
+    
+  }
+}
+
