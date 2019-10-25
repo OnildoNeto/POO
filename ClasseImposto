@@ -89,7 +89,7 @@ class contribuinte {
   public double calcular(){ 
     double total = 0;
     for (int i = 0; i < Impostos.size(); ++i){ 
-      total = total + Impostos.get(i).calcular(); //polimofismo } }
+      total = total + Impostos.get(i).calcular();                                       .
 }
     return total;
 }
