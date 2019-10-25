@@ -96,10 +96,10 @@ class contribuinte {
 }
 public class Main{
   public static void main(String args[]){
-    contribuinte c = new contribuinte("jose");
-    IR im = new IR("Italo", "tgyudggruy", 50.0, 25.0);
-    IPTU ip = new IPTU("MAThEUS", "tgyufruy", 70.0, 5.0);
-    IPVA ia = new IPVA("CORNOOOO", "tgyufyhuy", 20.0, 75.0);
+    contribuinte c = new contribuinte("jBarros");
+    IR im = new IR("Onildo", "788asd", 50.0, 25.0);
+    IPTU ip = new IPTU("Joherveson", "654fgh", 70.0, 5.0);
+    IPVA ia = new IPVA("Onielson", "123jkl", 20.0, 75.0);
     c.addImposto(im);
     c.addImposto(ip);
     c.addImposto(ia);
