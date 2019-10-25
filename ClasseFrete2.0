@@ -89,7 +89,7 @@ class CadastroFrete {
     public double calcularFrete(){
         double total = 0;
         for (int i = 0; i < frete.size(); ++i){
-            total = total + frete.get(i).calcularFrete(); //polimofismo } }
+            total = total + frete.get(i).calcularFrete();                                       .
            
         }
           return total;  
